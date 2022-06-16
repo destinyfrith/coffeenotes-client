@@ -6,7 +6,21 @@ export const NavBar = () => {
   const history = useHistory()
   return (
     <nav>
-      <Link to="/">Home</Link>
+      <ul className="navbar">
+
+     
+      <li>
+      <Link to="/">dashboard 
+      </Link>
+      </li>
+
+      <li>
+      <Link to="/addcoffee">+coffee
+      </Link>
+      </li>
+
+
+
       {
         localStorage.getItem("auth_token") !== null ?
           <button onClick={() => {
@@ -21,6 +35,10 @@ export const NavBar = () => {
             <Link to="/register">Register</Link>
           </>
       }
+       </ul>
     </nav>
   )
 }
+
+
+// if you add a link here, you must add a corresponding route on Appviews

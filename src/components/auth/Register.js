@@ -2,8 +2,7 @@ import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom"
 import { registerUser } from "./AuthManager"
 import './Auth.css'
-// TODO: This should get you started on registering a new user. 
-// Add new fields depending on your server side registration
+
 export const Register = () => {
   const username = useRef()
   const password = useRef()

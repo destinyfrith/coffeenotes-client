@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom"
-import "./Auth.css"
+import "./Login.css"
 import { loginUser } from "./AuthManager"
 
 
@@ -30,26 +30,28 @@ export const Login = () => {
   }
 
   return (
-    <main >
+    <main className="container--login">
       <dialog ref={invalidDialog}>
         <div>Username or password was not valid.</div>
-        <button onClick={e => invalidDialog.current.close()}>Close</button>
+        <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
       </dialog>
+
       <section>
-        <form onSubmit={handleLogin}>
+        <form className="form--login" onSubmit={handleLogin}>
           <fieldset>
-            <label htmlFor="inputUsername"> Username</label>
+            <label htmlFor="inputUsername"> username</label>
             <input ref={username} type="username" id="username" placeholder="Username address" required autoFocus />
           </fieldset>
           <fieldset>
-            <label htmlFor="inputPassword"> Password </label>
+            <label htmlFor="inputPassword"> password </label>
             <input ref={password} type="password" id="password" placeholder="Password" required />
           </fieldset>
           <fieldset>
-            <button type="submit">Sign In</button>
+            <button type="submit">sign In</button>
           </fieldset>
         </form>
       </section>
+
       <section>
         <Link to="/register">Not a member yet?</Link>
       </section>

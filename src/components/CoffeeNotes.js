@@ -5,7 +5,7 @@ import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 
-export const App = () => (
+export const CoffeeNotes = () => (
     <>
         <Route render={() => {
             if (localStorage.getItem("auth_token")) {
