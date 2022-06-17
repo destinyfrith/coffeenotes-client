@@ -8,34 +8,33 @@ export const NavBar = () => {
     <nav>
       <ul className="navbar">
 
-     
-      <li>
-      <Link to="/">dashboard 
-      </Link>
-      </li>
+        <li>
+          <Link to="/entries">dashboard
+          </Link>
+        </li>
 
-      <li>
-      <Link to="/addcoffee">+coffee
-      </Link>
-      </li>
-
+        <li>
+          <Link to="/addcoffee">+coffee
+          </Link>
+        </li>
 
 
-      {
-        localStorage.getItem("auth_token") !== null ?
-          <button onClick={() => {
-            localStorage.removeItem("auth_token")
-            history.push({ pathname: "/" })
-          }}>
-            Logout
-          </button>
-          :
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
-      }
-       </ul>
+
+        {
+          localStorage.getItem("auth_token") !== null ?
+            <button onClick={() => {
+              localStorage.removeItem("auth_token")
+              history.push({ pathname: "/" })
+            }}>
+              Logout
+            </button>
+            :
+            <>
+              <Link to="/login">Login</Link>
+              <Link to="/register">Register</Link>
+            </>
+        }
+      </ul>
     </nav>
   )
 }

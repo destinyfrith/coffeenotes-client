@@ -31,8 +31,8 @@ export const createEntry = (entry) => {
         .then(response => response.json())
 }
 
-export const updateEntry = (entry) => {
-    return fetch("http://localhost:8000/entries", {
+export const editEntry = (id, entry) => {
+    return fetch(`http://localhost:8000/entries/${id}`, {
         method: "PUT",
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`,
@@ -40,7 +40,16 @@ export const updateEntry = (entry) => {
         },
         body: JSON.stringify(entry)
     })
-        .then(response => response.json())
+}
+
+export const deleteEntry = (id) => {
+    return fetch(`http://localhost:8000/entries/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(getEntries)
 }
 
 export const getBrewingMethods = () => {
