@@ -29,31 +29,30 @@ export const EntryList = (props) => {
 
     return (
         <>
-        <article className="entries">
-            {
-                entries.map(entry => {
-                    return <section key={`entry--${entry.id}`} className="entry">
-                        <div>
-                        <ul>
-                        <div className="entry__image"><img src={entry.image} height="300"/></div>
-                        <li className="entry__name">{entry.name}</li>
-                        <li className="entry__brewingmethod">{entry.brewing_method.type}</li>
-                        <li className="entry__grindsetting">{entry.grind_setting}</li>
-                        <li className="entry__rating">{entry.rating}</li>
-                        <li className="entry__flavornotes">{entry?.flavor_profile[0]?.name}</li>
-                        <li className="entry__notes">{entry.notes}</li>
-                        </ul>
+            <article className="entries">
+                {
+                    entries.map(entry => {
+                        return <section key={`entry--${entry.id}`} className="entry">
+                            <div>
+                                <ul>
+                                    <div className="entry__image"><img src={entry.image} height="300" /></div>
+                                    <li className="entry__name">Name: {entry.name}</li>
+                                    <li className="entry__brewingmethod">Brewing Method: {entry.brewing_method.type}</li>
+                                    <li className="entry__grindsetting">Grind Setting: {entry.grind_setting}</li>
+                                    <li className="entry__rating">Rating: {entry.rating}</li>
+                                    <li>Flavors: {entry.flavor_profile?.slice(0, 5).map(({ name }) => name).join(', ')}</li>
+                                    <li className="entry__notes">Notes: {entry.notes}</li>
+                                </ul>
+                                <button className="edit-btn" onClick={() => {
+                                    history.push(`entries/edit/${entry.id}`)
+                                }}>edit</button>
 
-                        <button className="edit-btn" onClick={() => {
-                            history.push(`entries/edit/${entry.id}`)
-                        }}>edit</button>
-
-                        <button className="delete-btn" onClick={() => { onClickDelete(entry.id) }}>delete</button>
-                        </div>
-                    </section>
-                })
-            }
-        </article>
+                                <button className="delete-btn" onClick={() => { onClickDelete(entry.id) }}>delete</button>
+                            </div>
+                        </section>
+                    })
+                }
+            </article>
         </>
     )
 }

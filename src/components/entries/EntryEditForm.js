@@ -158,6 +158,10 @@ export const EntryEditForm = () => {
                     </div>
                 </fieldset>
 
+                <button className="cancel-btn" onClick={() => {
+                            history.push("/entries")
+                        }}>cancel</button>
+
                 <button type="submit"
                     onClick={(evt) => {
                         evt.preventDefault();
