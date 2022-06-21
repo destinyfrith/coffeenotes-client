@@ -1,0 +1,67 @@
+.entries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 35px;
+}
+
+.entry {
+    flex-basis: 28%;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid goldenrod;
+    align-content: center;
+    width: 40px;
+    background:white;
+    color: rgba(139, 71, 31, 0.9);
+    font-style:normal;
+    font-size: 14px;
+}
+
+.details {
+    align-content: center;
+    margin: 2px 2px;
+    padding: 1em;
+}
+
+.img {
+    align-content: center;
+    position: absolute;
+
+}
+
+.buttons {
+    text-align: center;
+}
+
+.edit-btn {
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    color: rgba(139, 71, 31, 0.9);
+}
+
+.delete-btn {
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    margin: 5px;
+    color: rgba(139, 71, 31, 0.9);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.createform {
+    background-color: white;
+    width: 70%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.editform {
+    background-color: white;
+    width: 70%;
+    margin: 20px;
+    padding: 20px;
+}

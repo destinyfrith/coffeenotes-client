@@ -9,6 +9,7 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
 import { createEntry, getBrewingMethods, getFlavorNotes } from './EntryManager.js'
+import "./Entries.css"
 
 export const EntryCreateForm = () => {
 
@@ -58,11 +59,12 @@ export const EntryCreateForm = () => {
 
     return (
         <>
-            <h3>add a new coffee</h3>
+        <section className="createform">
+            <h3>Add a New Coffee</h3>
             <form>
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="name">name: </label>
+                        <label htmlFor="name">Name: </label>
                         <input type="text" name="name" required autoFocus className="form-control"
                             value={currentEntry.name}
                             onChange={changeEntryState}
@@ -72,7 +74,7 @@ export const EntryCreateForm = () => {
 
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="image">image: </label>
+                        <label htmlFor="image">Image: </label>
                         <input type="text" name="image" required autoFocus className="form-control"
                             value={currentEntry.image}
                             onChange={changeEntryState}
@@ -82,7 +84,7 @@ export const EntryCreateForm = () => {
 
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="grind_setting">grind setting: </label>
+                        <label htmlFor="grind_setting">Grind setting: </label>
                         <input type="text" name="grind_setting" required autoFocus className="form-control"
                             value={currentEntry.grind_setting}
                             onChange={changeEntryState}
@@ -92,7 +94,7 @@ export const EntryCreateForm = () => {
 
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="rating">rating: </label>
+                        <label htmlFor="rating">Rating: </label>
                         <input id="rating" type="text" name="rating" required autoFocus className="form-control"
                             value={currentEntry.rating}
                             onChange={changeEntryState}
@@ -101,8 +103,8 @@ export const EntryCreateForm = () => {
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="notes">notes </label>
-                        <input id="notes" type="text" name="notes" required autoFocus className="form-control"
+                        <label htmlFor="notes">Notes: </label><br></br>
+                        <textarea id="notes" type="text" name="notes" required autoFocus className="form-control"
                             value={currentEntry.notes}
                             onChange={changeEntryState}
                         />
@@ -111,7 +113,7 @@ export const EntryCreateForm = () => {
 
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="brewingmethod">brewing method: </label>
+                        <label htmlFor="brewingmethod">Brewing Method: </label>
                         <div className="control">
                             <select name="brewing_method"
                                 onChange={changeEntryState}>
@@ -128,17 +130,18 @@ export const EntryCreateForm = () => {
 
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="">flavor notes: </label>
+                        <label>Flavor Notes: </label><br></br>
                         {flavornotes.map((note) => {
                             return (
                                 <>
-                                    {` ${note.name}: `}
+                                    
                                     <input
                                         type="checkbox"
                                         required
                                         value={note.id}
                                         onChange={flavorToggle}
                                     />
+                                    {`${note.name} `}
                                 </>
                             );
                         })}
@@ -163,6 +166,7 @@ export const EntryCreateForm = () => {
                     }}
                     className="btn btn-primary">add</button>
             </form>
+            </section>
         </>
     )
 

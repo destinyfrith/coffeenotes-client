@@ -71,116 +71,117 @@ export const EntryEditForm = () => {
 
     return (
         <>
-            <h3>update coffee</h3>
-            <form>
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="name">name: </label>
-                        <input type="text" name="name" required autoFocus className="form-control"
-                            value={currentEntry.name}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="image">image: </label>
-                        <input type="text" name="image" required autoFocus className="form-control"
-                            value={currentEntry.image}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="grind_setting">grind setting: </label>
-                        <input type="text" name="grind_setting" required autoFocus className="form-control"
-                            value={currentEntry.grind_setting}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="rating">rating: </label>
-                        <input id="rating" type="text" name="rating" required autoFocus className="form-control"
-                            value={currentEntry.rating}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="notes">notes </label>
-                        <input id="notes" type="textarea" name="notes" required autoFocus className="form-control"
-                            value={currentEntry.notes}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="brewingmethod">brewing method: </label>
-                        <div className="control">
-                            <select name="brewing_method"
-                                onChange={changeEntryState}>
-                                <option value="0">select brewing method:</option>
-                                {brewingmethods.map(brewingmethod => (
-                                    <option key={brewingmethod.id} value={brewingmethod.id}>
-                                        {brewingmethod.type}
-                                    </option>
-                                ))}
-                            </select>
+            <section className="editform">
+                <h3>update coffee</h3>
+                <form>
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="name">name: </label>
+                            <input type="text" name="name" required autoFocus className="form-control"
+                                value={currentEntry.name}
+                                onChange={changeEntryState}
+                            />
                         </div>
-                    </div>
-                </fieldset>
+                    </fieldset>
 
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="">flavor notes: </label>
-                        {flavornotes.map((note) => {
-                            return (
-                                <>
-                                    {` ${note.name}: `}
-                                    <input
-                                        type="checkbox"
-                                        checked={currentEntry.flavor_profile?.includes(note.id)}
-                                        value={note.id}
-                                        onChange={editFlavorToggle}
-                                    />
-                                </>
-                            );
-                        })}
-                    </div>
-                </fieldset>
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="image">image: </label>
+                            <input type="text" name="image" required autoFocus className="form-control"
+                                value={currentEntry.image}
+                                onChange={changeEntryState}
+                            />
+                        </div>
+                    </fieldset>
 
-                <button className="cancel-btn" onClick={() => {
-                            history.push("/entries")
-                        }}>cancel</button>
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="grind_setting">grind setting: </label>
+                            <input type="text" name="grind_setting" required autoFocus className="form-control"
+                                value={currentEntry.grind_setting}
+                                onChange={changeEntryState}
+                            />
+                        </div>
+                    </fieldset>
 
-                <button type="submit"
-                    onClick={(evt) => {
-                        evt.preventDefault();
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="rating">rating: </label>
+                            <input id="rating" type="text" name="rating" required autoFocus className="form-control"
+                                value={currentEntry.rating}
+                                onChange={changeEntryState}
+                            />
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="notes">notes </label>
+                            <input id="notes" type="textarea" name="notes" required autoFocus className="form-control"
+                                value={currentEntry.notes}
+                                onChange={changeEntryState}
+                            />
+                        </div>
+                    </fieldset>
 
-                        const entry = {
-                            name: currentEntry.name,
-                            image: currentEntry.image,
-                            grind_setting: currentEntry.grind_setting,
-                            rating: currentEntry.rating,
-                            notes: currentEntry.notes,
-                            flavor_profile: currentEntry.flavor_profile,
-                            brewing_method: parseInt(currentEntry.brewing_method)
-                        }
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="brewingmethod">brewing method: </label>
+                            <div className="control">
+                                <select name="brewing_method"
+                                    onChange={changeEntryState}>
+                                    <option value="0">select brewing method:</option>
+                                    {brewingmethods.map(brewingmethod => {
+                                        return <option key={`brewingmethod--${brewingmethod.id}`} value={brewingmethod.id}>
+                                            {brewingmethod.type}
+                                        </option>
+                                    })}
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
 
-                        editEntry(entryId, currentEntry)
-                            .then(() => history.push("/entries"))
-                    }}
-                    className="btn btn-primary">update</button>
-            </form>
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="">flavor notes: </label>
+                            {flavornotes.map((note) => {
+                                return (
+                                    <>
+                                        {` ${note.name}: `}
+                                        <input
+                                            type="checkbox"
+                                            checked={currentEntry.flavor_profile?.includes(note.id)}
+                                            value={note.id}
+                                            onChange={editFlavorToggle}
+                                        />
+                                    </>
+                                );
+                            })}
+                        </div>
+                    </fieldset>
+
+                    <button className="cancel-btn" onClick={() => {
+                        history.push("/entries")
+                    }}>cancel</button>
+
+                    <button type="submit"
+                        onClick={(evt) => {
+                            evt.preventDefault()
+                            const entry = {
+                                name: currentEntry.name,
+                                image: currentEntry.image,
+                                grind_setting: currentEntry.grind_setting,
+                                rating: currentEntry.rating,
+                                notes: currentEntry.notes,
+                                flavor_profile: currentEntry.flavor_profile,
+                                brewing_method: parseInt(currentEntry.brewing_method)
+                            }
+
+                            editEntry(entryId, currentEntry)
+                                .then(() => history.push("/entries"))
+                        }}
+                        className="btn btn-primary">update</button>
+                </form>
+            </section>
         </>
     )
 
