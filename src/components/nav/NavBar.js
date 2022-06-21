@@ -9,12 +9,12 @@ export const NavBar = () => {
       <ul className="navbar">
 
         <li>
-          <Link to="/entries">dashboard
+          <Link to="/entries">Dashboard
           </Link>
         </li>
 
         <li>
-          <Link to="/addcoffee">+coffee
+          <Link to="/addcoffee">Add Coffee
           </Link>
         </li>
 

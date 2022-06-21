@@ -42,7 +42,7 @@ export const EntryEditForm = () => {
                 image: data.image,
                 notes: data.notes,
                 rating: data.rating,
-                brewing_method: parseInt(data.brewing_method),
+                brewing_method: parseInt(data.brewing_method.id),
                 flavor_profile: data.flavor_profile?.map((note) => {
                     return note.id
                 }),
@@ -72,11 +72,11 @@ export const EntryEditForm = () => {
     return (
         <>
             <section className="editform">
-                <h3>update coffee</h3>
+                <h3>Update Coffee</h3>
                 <form>
                     <fieldset>
                         <div className="form-group">
-                            <label htmlFor="name">name: </label>
+                            <label htmlFor="name">Name: </label>
                             <input type="text" name="name" required autoFocus className="form-control"
                                 value={currentEntry.name}
                                 onChange={changeEntryState}
@@ -86,7 +86,7 @@ export const EntryEditForm = () => {
 
                     <fieldset>
                         <div className="form-group">
-                            <label htmlFor="image">image: </label>
+                            <label htmlFor="image">Image: </label>
                             <input type="text" name="image" required autoFocus className="form-control"
                                 value={currentEntry.image}
                                 onChange={changeEntryState}
@@ -96,7 +96,7 @@ export const EntryEditForm = () => {
 
                     <fieldset>
                         <div className="form-group">
-                            <label htmlFor="grind_setting">grind setting: </label>
+                            <label htmlFor="grind_setting">Grind Setting: </label>
                             <input type="text" name="grind_setting" required autoFocus className="form-control"
                                 value={currentEntry.grind_setting}
                                 onChange={changeEntryState}
@@ -106,7 +106,7 @@ export const EntryEditForm = () => {
 
                     <fieldset>
                         <div className="form-group">
-                            <label htmlFor="rating">rating: </label>
+                            <label htmlFor="rating">Rating: </label>
                             <input id="rating" type="text" name="rating" required autoFocus className="form-control"
                                 value={currentEntry.rating}
                                 onChange={changeEntryState}
@@ -115,8 +115,8 @@ export const EntryEditForm = () => {
                     </fieldset>
                     <fieldset>
                         <div className="form-group">
-                            <label htmlFor="notes">notes </label>
-                            <input id="notes" type="textarea" name="notes" required autoFocus className="form-control"
+                            <label htmlFor="notes">Notes <br></br> </label>
+                            <textarea id="notes" type="textarea" name="notes" required autoFocus className="form-control"
                                 value={currentEntry.notes}
                                 onChange={changeEntryState}
                             />
@@ -125,9 +125,9 @@ export const EntryEditForm = () => {
 
                     <fieldset>
                         <div className="form-group">
-                            <label htmlFor="brewingmethod">brewing method: </label>
+                            <label htmlFor="brewingmethod">Brewing Method: </label>
                             <div className="control">
-                                <select name="brewing_method"
+                                <select value={currentEntry.brewing_method} name="brewing_method"
                                     onChange={changeEntryState}>
                                     <option value="0">select brewing method:</option>
                                     {brewingmethods.map(brewingmethod => {
@@ -142,7 +142,7 @@ export const EntryEditForm = () => {
 
                     <fieldset>
                         <div className="form-group">
-                            <label htmlFor="">flavor notes: </label>
+                            <label htmlFor="">Flavor Notes: </label>
                             {flavornotes.map((note) => {
                                 return (
                                     <>

@@ -16,7 +16,8 @@ export const EntryList = (props) => {
             })
     }
 
-    // this useeffect fetches the current state of all entries (list)
+    // this useeffect fetches the current state of all entries (list) 
+    // useEffect = observe state
     useEffect(() => {
         entryState()
     }, [])
