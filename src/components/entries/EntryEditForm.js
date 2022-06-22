@@ -115,7 +115,7 @@ export const EntryEditForm = () => {
                     </fieldset>
                     <fieldset>
                         <div className="form-group">
-                            <label htmlFor="notes">Notes <br></br> </label>
+                            <label htmlFor="notes">Notes: <br></br> </label>
                             <textarea id="notes" type="textarea" name="notes" required autoFocus className="form-control"
                                 value={currentEntry.notes}
                                 onChange={changeEntryState}

@@ -38,12 +38,12 @@ export const EntryList = (props) => {
                             <ul>
                                 <div className="image"><img src={entry.image} height="300" /></div>
                                 <br></br>
-                                <li><b>Name:</b> {entry.name}</li>
-                                <li><b>Brewing Method:</b> {entry.brewing_method.type}</li>
-                                <li><b>Grind Setting:</b> {entry.grind_setting}</li>
+                                <li><b>Name:</b> {entry.name}</li><br></br>
+                                <li><b>Brewing Method:</b> {entry.brewing_method.type}</li><br></br>
+                                <li><b>Grind Setting:</b> {entry.grind_setting}</li><br></br>
+                                <li><b>Flavors:</b> {entry.flavor_profile?.slice(0, 5).map(({ name }) => name).join(', ')}</li><br></br>
+                                <li><b>Notes:</b> {entry.notes}</li><br></br>
                                 <li><b>Rating:</b> {entry.rating}</li>
-                                <li><b>Flavors:</b> {entry.flavor_profile?.slice(0, 5).map(({ name }) => name).join(', ')}</li>
-                                <li><b>Notes:</b> {entry.notes}</li>
                             </ul>
                             <br></br>
                             <br></br>

@@ -7,7 +7,7 @@ export const NavBar = () => {
   return (
     <nav className="navbar">
       <section className="body">
-        <label class="logo">coffee notes</label>
+        <label className="logo">coffee notes</label>
 
         <ul>
 

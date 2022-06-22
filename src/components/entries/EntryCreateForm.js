@@ -117,7 +117,7 @@ export const EntryCreateForm = () => {
                         <div className="control">
                             <select name="brewing_method"
                                 onChange={changeEntryState}>
-                                <option value="0">select brewing method:</option>
+                                <option value="0">Select Brewing Method:</option>
                                 {brewingmethods.map(brewingmethod => (
                                     <option key={brewingmethod.id} value={brewingmethod.id}>
                                         {brewingmethod.type}
@@ -169,7 +169,7 @@ export const EntryCreateForm = () => {
 <button className="btn" onClick={() => {
                         history.push("/entries")
                     }}>cancel</button>
-                    
+
             </form>
             </section>
         </>
