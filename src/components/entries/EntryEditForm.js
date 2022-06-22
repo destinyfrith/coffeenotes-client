@@ -18,7 +18,7 @@ export const EntryEditForm = () => {
     });
 
     const history = useHistory()
-
+    // useParams hook returns an object of a key of the dynamic params from the current URL that were matched by the <Route path>
     const { entryId } = useParams()
 
     // this event grabs current brewing methods and sets them so that they can be selected from menu
@@ -64,7 +64,7 @@ export const EntryEditForm = () => {
         if (evt.target.checked) {
             copy.flavor_profile.push(parseInt(evt.target.value)); //if changed to checked, add the flavor note
         } else {
-            copy.flavor_profile.splice(copy.flavor_profile.indexOf(evt.target.value), 1); //if changed to untagged, find the index of the id, and then remove one element starting at that index
+            copy.flavor_profile.splice(copy.flavor_profile.indexOf(evt.target.value), 1); //if changed to unchecked find the index of the id, and then remove one element starting at that index
         }
         setCurrentEntry(copy);
     };
