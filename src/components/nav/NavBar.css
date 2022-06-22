@@ -56,3 +56,13 @@ nav ul li a{
     font-weight: 700;
     cursor: pointer;
 }
+
+.logout.active, .logout:hover {
+    color: rgb(227, 182, 127);
+    transition: .5s;
+}
+
+.a.active, a:hover {
+    color: rgb(227, 182, 127);
+    transition: .5s;
+}

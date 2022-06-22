@@ -37,6 +37,7 @@ export const EntryList = (props) => {
                         return <section key={`entry--${entry.id}`} className="entry">
                             <ul>
                                 <div className="image"><img src={entry.image} height="300" /></div>
+                                <br></br>
                                 <li><b>Name:</b> {entry.name}</li>
                                 <li><b>Brewing Method:</b> {entry.brewing_method.type}</li>
                                 <li><b>Grind Setting:</b> {entry.grind_setting}</li>
@@ -44,13 +45,14 @@ export const EntryList = (props) => {
                                 <li><b>Flavors:</b> {entry.flavor_profile?.slice(0, 5).map(({ name }) => name).join(', ')}</li>
                                 <li><b>Notes:</b> {entry.notes}</li>
                             </ul>
-
+                            <br></br>
+                            <br></br>
                             <div className="buttons">
-                                <button className="edit-btn" onClick={() => {
+                                <button className="btn" onClick={() => {
                                     history.push(`entries/edit/${entry.id}`)
                                 }}>edit</button>
 
-                                <button className="delete-btn" onClick={() => { onClickDelete(entry.id) }}>delete</button>
+                                <button className="btn" onClick={() => { onClickDelete(entry.id) }}>delete</button>
                             </div>
                         </section>
                     })

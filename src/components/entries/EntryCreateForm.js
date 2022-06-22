@@ -164,7 +164,12 @@ export const EntryCreateForm = () => {
                         createEntry(entry)
                             .then(() => history.push("/"))
                     }}
-                    className="btn btn-primary">add</button>
+                    className="btn">add</button>
+
+<button className="btn" onClick={() => {
+                        history.push("/entries")
+                    }}>cancel</button>
+                    
             </form>
             </section>
         </>
