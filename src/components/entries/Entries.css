@@ -72,3 +72,12 @@ ul {
     margin: 20px;
     padding: 20px;
 }
+
+h3 {
+    color: rgba(139, 71, 31, 0.9);
+}
+
+textarea {
+    font-family: Inter;
+    font-size: 15px;
+}
