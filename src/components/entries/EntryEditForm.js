@@ -146,7 +146,7 @@ export const EntryEditForm = () => {
                             {flavornotes.map((note) => {
                                 return (
                                     <>
-                                        {` ${note.name}: `}
+                                        {` ${ note.name} `}
                                         <input
                                             type="checkbox"
                                             checked={currentEntry.flavor_profile?.includes(note.id)}

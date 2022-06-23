@@ -130,7 +130,7 @@ export const EntryCreateForm = () => {
 
                 <fieldset>
                     <div className="form-group">
-                        <label>Flavor Notes: </label><br></br>
+                        <label>Flavor Notes: </label>
                         {flavornotes.map((note) => {
                             return (
                                 <>
@@ -141,7 +141,7 @@ export const EntryCreateForm = () => {
                                         value={note.id}
                                         onChange={flavorToggle}
                                     />
-                                    {`${note.name} `}
+                                    {` ${ note.name } ` }
                                 </>
                             );
                         })}
