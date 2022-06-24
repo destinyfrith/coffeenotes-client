@@ -29,11 +29,24 @@ export const EntryList = (props) => {
         })
     }
 
+    const [search, setNewSearch] = useState("");
+
+    const handleSearchChange = (e) => {
+        setNewSearch(e.target.value);
+    };
+
+    const filtered = !search
+        ? entries
+        : entries.filter((entry) =>
+            entry.name.toLowerCase().includes(search.toLowerCase())
+        );
+
+
     return (
         <>
+        <input type="text" className="searchbox" placeholder="search by name..." value={search} onChange={handleSearchChange} />
             <section className="entries">
-                {
-                    entries.map(entry => {
+                {filtered.map((entry => {
                         return <section key={`entry--${entry.id}`} className="entry">
                             <ul>
                                 <div className="image"><img src={entry.image} height="300" /></div>
@@ -56,6 +69,7 @@ export const EntryList = (props) => {
                             </div>
                         </section>
                     })
+                )
                 }
             </section>
         </>

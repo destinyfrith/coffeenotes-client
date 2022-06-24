@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin:  45px 55px;
+    margin: 45px 55px;
 }
 
 .entry {
@@ -11,17 +11,18 @@
     margin: 10px;
     border: 1px solid goldenrod;
     align-content: center;
-    width: 40px;
-    background:white;
+    background: white;
     color: rgba(139, 71, 31, 0.9);
-    font-style:normal;
+    font-style: normal;
     font-size: 14px;
+    max-width: 500px;
 }
 
 .details {
     align-content: center;
     margin: 2px 2px;
     padding: 1em;
+    text-align: justify;
 
 }
 
@@ -48,7 +49,8 @@
     font-family: Inter;
 }
 
-.btn.active, .btn:hover {
+.btn.active,
+.btn:hover {
     color: rgb(227, 182, 127);
     transition: .5s;
     cursor: pointer;
@@ -80,4 +82,14 @@ h3 {
 textarea {
     font-family: Inter;
     font-size: 15px;
+}
+
+.searchbox {
+    display: flex;
+    padding: 6px;
+    border: none;
+    margin-top: 28px;
+    margin-left: 81%;
+    font-size: 20px;
+    border-radius: 2px;
 }
