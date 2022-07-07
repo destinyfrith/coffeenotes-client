@@ -29,7 +29,11 @@
 .img {
     align-content: center;
     position: absolute;
+}
 
+.entrytxt {
+    width: 75%;
+    margin: 0 auto;
 }
 
 .buttons {
