@@ -59,118 +59,120 @@ export const EntryCreateForm = () => {
 
     return (
         <>
-        <section className="createform">
-            <h3>Add a New Coffee</h3>
-            <form>
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="name">Name: </label>
-                        <input type="text" name="name" required autoFocus className="form-control"
-                            value={currentEntry.name}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="image">Image: </label>
-                        <input type="text" name="image" required autoFocus className="form-control"
-                            value={currentEntry.image}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="grind_setting">Grind setting: </label>
-                        <input type="text" name="grind_setting" required autoFocus className="form-control"
-                            value={currentEntry.grind_setting}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="rating">Rating: </label>
-                        <input id="rating" type="text" name="rating" required autoFocus className="form-control"
-                            value={currentEntry.rating}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="notes">Notes: </label><br></br>
-                        <textarea id="notes" type="text" name="notes" required autoFocus className="form-control"
-                            value={currentEntry.notes}
-                            onChange={changeEntryState}
-                        />
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="brewingmethod">Brewing Method: </label>
-                        <div className="control">
-                            <select name="brewing_method"
-                                onChange={changeEntryState}>
-                                <option value="0">Select Brewing Method:</option>
-                                {brewingmethods.map(brewingmethod => (
-                                    <option key={brewingmethod.id} value={brewingmethod.id}>
-                                        {brewingmethod.type}
-                                    </option>
-                                ))}
-                            </select>
+            <section className="createform">
+                <h3>Add a New Coffee</h3>
+                <form>
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="name">Name: </label>
+                            <input type="text" name="name" required autoFocus className="form-control"
+                                value={currentEntry.name}
+                                onChange={changeEntryState}
+                            />
                         </div>
-                    </div>
-                </fieldset>
+                    </fieldset>
 
-                <fieldset>
-                    <div className="form-group">
-                        <label>Flavor Notes: </label>
-                        {flavornotes.map((note) => {
-                            return (
-                                <>
-                                    
-                                    <input
-                                        type="checkbox"
-                                        required
-                                        value={note.id}
-                                        onChange={flavorToggle}
-                                    />
-                                    {` ${ note.name } ` }
-                                </>
-                            );
-                        })}
-                    </div>
-                </fieldset>
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="image">Image: </label>
+                            <input type="text" name="image" required autoFocus className="form-control"
+                                value={currentEntry.image}
+                                onChange={changeEntryState}
+                            />
+                        </div>
+                    </fieldset>
 
-                <button type="submit"
-                    onClick={evt => {
-                        evt.preventDefault()
-                        const entry = {
-                            name: currentEntry.name,
-                            image: currentEntry.image,
-                            grind_setting: currentEntry.grind_setting,
-                            rating: currentEntry.rating,
-                            notes: currentEntry.notes,
-                            flavor_profile: currentEntry.flavor_profile,
-                            brewing_method: parseInt(currentEntry.brewing_method)
-                        }
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="grind_setting">Grind setting: </label>
+                            <input type="text" name="grind_setting" required autoFocus className="form-control"
+                                value={currentEntry.grind_setting}
+                                onChange={changeEntryState}
+                            />
+                        </div>
+                    </fieldset>
 
-                        createEntry(entry)
-                            .then(() => history.push("/"))
-                    }}
-                    className="btn">add</button>
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="rating">Rating: </label>
+                            <input id="rating" type="text" name="rating" required autoFocus className="form-control"
+                                value={currentEntry.rating}
+                                onChange={changeEntryState}
+                            />
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="notes">Notes: </label><br></br>
+                            <textarea id="notes" type="text" name="notes" required autoFocus className="form-control"
+                                value={currentEntry.notes}
+                                onChange={changeEntryState}
+                            />
+                        </div>
+                    </fieldset>
 
-<button className="btn" onClick={() => {
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="brewingmethod">Brewing Method: </label>
+                            <div className="control">
+                                <select name="brewing_method"
+                                    onChange={changeEntryState}>
+                                    <option value="0">Select Brewing Method:</option>
+                                    {brewingmethods.map(brewingmethod => (
+                                        <option key={brewingmethod.id} value={brewingmethod.id}>
+                                            {brewingmethod.type}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <div className="form-group">
+                            <label>Flavor Notes: </label>
+                            {flavornotes.map((note) => {
+                                return (
+                                    <>
+
+                                        
+                                            <input
+                                                type="checkbox"
+                                                class="checkbox"
+                                                required
+                                                value={note.id}
+                                                onChange={flavorToggle}
+                                            />
+                                            {` ${note.name} `}
+                                    </>
+                                );
+                            })}
+                        </div>
+                    </fieldset>
+
+                    <button type="submit"
+                        onClick={evt => {
+                            evt.preventDefault()
+                            const entry = {
+                                name: currentEntry.name,
+                                image: currentEntry.image,
+                                grind_setting: currentEntry.grind_setting,
+                                rating: currentEntry.rating,
+                                notes: currentEntry.notes,
+                                flavor_profile: currentEntry.flavor_profile,
+                                brewing_method: parseInt(currentEntry.brewing_method)
+                            }
+
+                            createEntry(entry)
+                                .then(() => history.push("/"))
+                        }}
+                        className="btn">add</button>
+
+                    <button className="btn" onClick={() => {
                         history.push("/entries")
                     }}>cancel</button>
 
-            </form>
+                </form>
             </section>
         </>
     )
