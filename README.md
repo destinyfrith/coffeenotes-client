@@ -76,6 +76,6 @@ For ease of use it is suggested to use npm. If you do now have npm you can insta
    ```sh
    npm start
    ```
-4.  Clone/Open and run server code [Server](github.com/destinyfrith/coffeenotes-api.git)
+4.  Clone/Open and run server code [Server](github.com/destinyfrith/coffeenotes-api)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
