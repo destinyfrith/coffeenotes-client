@@ -1,7 +1,7 @@
 // this module holds all http requests for entries
 
 export const getEntries = () => {
-    return fetch("http://localhost:8000/entries", {
+    return fetch("https://coffee-notes-app.herokuapp.com/entries", {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -11,7 +11,7 @@ export const getEntries = () => {
 }
 
 export const getEntry = (id) => {
-    return fetch(`http://localhost:8000/entries/${id}`, {
+    return fetch(`https://coffee-notes-app.herokuapp.com/entries/${id}`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -20,7 +20,7 @@ export const getEntry = (id) => {
 }
 
 export const createEntry = (entry) => {
-    return fetch("http://localhost:8000/entries", {
+    return fetch("https://coffee-notes-app.herokuapp.com/entries", {
         method: "POST",
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`,
@@ -32,7 +32,7 @@ export const createEntry = (entry) => {
 }
 
 export const editEntry = (id, entry) => {
-    return fetch(`http://localhost:8000/entries/${id}`, {
+    return fetch(`https://coffee-notes-app.herokuapp.com/entries/${id}`, {
         method: "PUT",
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`,
@@ -43,7 +43,7 @@ export const editEntry = (id, entry) => {
 }
 
 export const deleteEntry = (id) => {
-    return fetch(`http://localhost:8000/entries/${id}`, {
+    return fetch(`https://coffee-notes-app.herokuapp.com/entries/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -53,7 +53,7 @@ export const deleteEntry = (id) => {
 }
 
 export const getBrewingMethods = () => {
-    return fetch(`http://localhost:8000/brewingmethods`, {
+    return fetch(`https://coffee-notes-app.herokuapp.com/brewingmethods`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -62,7 +62,7 @@ export const getBrewingMethods = () => {
 }
 
 export const getFlavorNotes = () => {
-    return fetch(`http://localhost:8000/flavornotes`, {
+    return fetch(`https://coffee-notes-app.herokuapp.com/flavornotes`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
